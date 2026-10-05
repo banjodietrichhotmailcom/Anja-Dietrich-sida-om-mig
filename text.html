@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anja Dietrich - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://googleapis.com" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <img src="post-it.jpg" alt="Oskrivna post-it-lappar" class="header-img">
+        </header>
+
+
+<nav class="bollcontainer">
+
+    <button class="boll" data-target="ruta-om-mig">Om mig</button>
+    
+    
+    <button class="boll" data-target="ruta-kontakt">Kontakt</button>
+    
+</nav>
+
+<main class="profil-sektion">
+    <figure class="bild-wrapper">
+        <img src="Profilbild.1.jpg" alt="Bild på Anja Dietrich" class="min-bild">
+    </figure>
+    
+    <h1 class="namn-text">Anja Dietrich</h1>
+    <p class="tagline">UXE-student | Bra på logik & design</p>
+    <button class="projekt-boll" data-target="ruta-projekt">Projekt</button>
+    
+    
+   
+    
+    <dialog id="ruta-kontakt" class="postit-dialog">
+        <p>Vad kul att du vill ta kontakt med mig!</p>
+        <p>Du kan nå mig på e-post: <a href="mailto:banjodietrich@hotmail.com" class="post-it-link">banjodietrich@hotmail.com</a></p>
+        <p>Mobil: <a href="tel:+46737591769" class="post-it-link">073-7591769</a></p>
+        <button class="pin-btn stang-lapp" aria-label="Stäng">📌</button>
+        
+    </dialog>
+    
+    
+    <!-- OM MIG-LAPPEN -->
+    <dialog id="ruta-om-mig" class="postit-dialog">
+        <h2>Om mig</h2>
+        <p>Hej! Vad kul att du vill veta mer om mig.</p>
+        <p>Jag studerar till UX-engineer på Chasacademy i Globen och blir klar i maj 2028. Mina styrkor är design och logik och mina långa erfarenhet inom socialt arbete gör att jag lätt kan förstå användarens perspektiv.</p>
+       <button class="pin-btn stang-lapp" aria-label="Stäng">📌</button>
+    </dialog>
+    
+    <!-- PROJEKT-LAPPEN -->
+    <dialog id="ruta-projekt" class="postit-dialog">
+        
+        <h2>Mina projekt</h2>
+        <p>Här listar jag mina projekt löpande</p>
+        <button class="pin-btn stang-lapp" aria-label="Stäng">📌</button>
+    </dialog>
+    <section class="lapp-container"></section>
+</main>
+
+<script src="script.js"></script>  
+<footer class="sido-footer">
+  <p>© 2026 – Skapad av [Anja Dietrich]</p>
+  <a href="https://linkedin.com/in/anja-dietrich-a923a518a" target="_blank" class="linkedin-link">
+    Följ mig på LinkedIn
+  </a>
+</footer>    
+
+</body>
+</html>

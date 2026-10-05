@@ -1,0 +1,356 @@
+body {
+    max-width: 50rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1.25rem; 
+    font-family: Poppins, sans-serif;
+    line-height: 1.2;
+    background-color: rgba(194, 65, 95, 0.55); 
+    color: #2A2A2A;
+    box-sizing: border-box; 
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+/* ==========================================================================
+   2. HEADER & FOOTER
+   ========================================================================== */
+.header-img {
+    width: 100%;
+    height: 3.5rem;
+    object-fit: cover;
+    object-position: left center;
+    border-radius: 3rem;
+}  
+
+.sido-footer {
+    text-align: center;
+    margin-top: 5rem;       
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1); 
+    font-family: Poppins, sans-serif;
+    color: #2A2A2A;
+}
+
+.sido-footer p {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    opacity: 0.8;           
+}
+
+.linkedin-link {
+    display: inline-block;
+    color: #2A2A2A;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: underline; 
+    text-underline-offset: 4px; 
+    transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.linkedin-link:hover {
+    opacity: 0.7;
+    color: #0077B5; 
+}
+
+/* ==========================================================================
+   3. NAVIGERING & BOLLAR (ÄGGOVALER)
+   ========================================================================== */
+.bollcontainer {
+    display: flex;
+    justify-content: space-around; 
+    gap: 2rem;   
+    margin-top: 1.5rem;            
+    margin-bottom: 0.5rem; 
+    flex-wrap: wrap;     
+}
+
+.boll {
+    width: 7rem;
+    height: 10rem;
+    border-radius: 60%;     
+    border: 0.3rem solid rgba(194, 65, 95, 0.7);
+    background-color: #f9eac6;
+    color: rgb(10, 112, 218);
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    flex-shrink: 0;
+    box-shadow: 0 0.5rem 1rem 0.1rem rgba(40, 10, 20, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.boll:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 0.8rem 1.5rem rgba(138, 36, 60, 0.25);
+}
+
+/* ==========================================================================
+   4. PROFIL-SEKTION (MITTEN)
+   ========================================================================== */
+.profil-sektion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    text-align: center;  
+}   
+
+.min-bild {
+    border: 5px solid rgba(194, 65, 95, 0.75);
+    border-radius: 40%;    
+    width: 11rem;          
+    height: 15rem;         
+    object-fit: cover; 
+    box-shadow: 0 0.5rem 1rem 0.1rem rgba(40, 10, 20, 0.35);
+}  
+
+.namn-text {
+    color: rgb(10, 112, 218);
+    font-style: poppins, cursive; 
+    text-shadow: 0.25rem 0.25rem 0.375rem rgb(194, 65, 95);  
+    margin-top: 0px;       
+    margin-bottom: 0px;     
+    font-size: 2.5rem;
+}
+
+.tagline {
+    font-size: 1rem;
+    font-family: Cambria, Georgia, serif;     
+    color: rgb(10,112,218);
+    margin-top: 0;
+    font-weight: bold;
+}
+
+.projekt-boll {
+    width: 10rem;            
+    height: 7rem;            
+    border-radius: 60%;     
+    border: 0.3rem solid rgba(194, 65, 95, 0.75); 
+    background-color: #f9eac6;                 
+    color: rgb(10, 112, 218);                  
+    font-family: inherit;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-top: 1.5rem;       
+    box-shadow: 0 0.5rem 1rem 0.1rem rgba(40, 10, 20, 0.35);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.projekt-boll:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0.8rem 1.5rem rgba(138, 36, 60, 0.25);
+}
+
+/* ==========================================================================
+   5. POST-IT LAPPAR (DIALOG)
+   ========================================================================== */
+dialog.postit-dialog {
+    font-family: "Chalkboard SE", "Bradley Hand", "Noteworthy", cursive; 
+    font-size: 1.2rem;
+    color: rgba(45, 45, 45, 0.85);  
+    text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.15);
+    border: none;              
+    
+    /* FÖRENKLAT: Helt jämna, snygga hörn istället för uppvik */
+    border-radius: 8px;
+    
+    padding: 4.5rem 1.8rem 1.8rem 1.8rem;   
+    width: 90%;           
+    max-width: 18rem;    
+    aspect-ratio: 1/1;  
+    
+    /* FÖRENKLAT: En ren, mjuk och modern skugga */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        
+    margin: 0; 
+    transition: box-shadow 0.2s ease;
+}
+
+dialog.postit-dialog a { 
+    color: inherit;
+    text-decoration: underline wavy rgba(55, 55, 55, 0.4); 
+}
+
+/* Unika bakgrunder för lapparna */
+#ruta-om-mig {
+    background: linear-gradient(to bottom, #cce6ff 3rem, #e6f2ff 3rem);
+}
+
+#ruta-kontakt {
+    background: linear-gradient(to bottom, #f2e89d 3rem, #fffbc7 3rem);
+}
+
+#ruta-projekt { 
+    background: linear-gradient(to bottom, #f7d2db 3rem, #fbebee 3rem);
+}
+
+/* Nålen (Stängknappen) */
+.pin-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 0; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3rem;
+    height: 3rem;
+    z-index: 9999;
+}
+
+.pin-btn::before {
+    content: "📌";
+    font-size: 2rem;
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    filter: drop-shadow(2px 4px 3px rgba(0,0,0,0.3));
+}
+
+.pin-btn:hover {
+    transform: translateX(-50%) rotate(10deg) scale(1.1);
+}
+
+/* Övriga dolda dialog-rutor (om du har några) */
+dialog:not(.postit-dialog) {
+    background-color: rgba(194, 65, 95, 0.90); 
+    color: #faf6ee;         
+    border: none;              
+    border-radius: 1rem;       
+    padding: 1.8rem;   
+    width: 90%;           
+    max-width: 25rem;          
+    box-shadow: 0 0.6rem 2.5rem rgba(0, 0, 0, 0.15); 
+    margin-top: 35vh; 
+
+}
+.lapp-container {
+    display: flex;
+    flex-direction: row;       /* Sida vid sida på dator */
+    flex-wrap: wrap;           
+    justify-content: center;   
+    gap: 2rem;                 
+    width: 100%;
+    margin-top: 3rem;          
+}
+
+/* FIXEN: Vi stylar dialogen specifikt när den har attributet [open] */
+dialog.postit-dialog[open] {
+    /* VÄNDER ALLT RÄTT: Ändrar webbläsarens inbyggda flex-layout till en vanlig stabil box */
+    display: block; 
+    
+    /* FIXEN FÖR PINSEN: Gör att nålarna stannar inuti lappen istället för att flyga ut */
+    position: relative;        
+    
+    /* Nollställer webbläsarens dolda marginaler och ramar */
+    margin: 0;                 
+    border: none;
+    
+    /* Din fina design för post-it-lapparna */
+    font-family: "Chalkboard SE", "Bradley Hand", "Noteworthy", cursive; 
+    font-size: 1.2rem;
+    color: rgba(45, 45, 45, 0.85);  
+    text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    padding: 4.5rem 1.8rem 1.8rem 1.8rem;   
+    width: 100%;           
+    max-width: 18rem;    
+    aspect-ratio: 1/1;  
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Gömmer lappen helt när den är stängd så den inte tar upp plats */
+dialog.postit-dialog:not([open]) {
+    display: none;
+}
+.pin-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute; /* Ligger kvar som absolute */
+    top: 0; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3rem;
+    height: 3rem;
+    z-index: 9999;
+}
+
+/* MOBIL- & SURFPLATTEMODE (Gäller för skärmar UPP TILL 48rem/768px) */
+@media (max-width: 48rem) {
+    .bollcontainer {
+        flex-direction: row; 
+        flex-wrap: wrap; 
+        align-items: center;    
+        justify-content: center; 
+    }
+
+    .lapp-container {
+        flex-direction: column; /* Staplar dina post-it lappar vertikalt på mobilen */
+        align-items: center;
+        gap: 1.5rem; 
+    }
+
+    .projekt-boll {
+        margin-top: 1.5rem;
+    }
+
+    header, .site-header, .huvud-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding-bottom: 1rem;
+        margin-bottom: 1.5rem; 
+    }
+}
+
+/* DATOR- & SKRIVBORDSMODE (Gäller för skärmar FRÅN 48rem/768px och uppåt) */
+@media (min-width: 48rem) { 
+    .profil-sektion {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;    
+        text-align: center;
+        width: 100%;
+    }
+    
+    .min-bild {
+        margin-top: -7rem; 
+    }
+    
+    .namn-text {
+        margin-top: -1rem;
+        margin-bottom: 0.25rem;
+    }
+    
+    .tagline {
+        margin-top: 0;
+        margin-bottom: 0.25rem;
+    }
+
+    .projekt-boll {
+        margin-top: 1rem; 
+        margin-bottom: 1rem; 
+    }
+
+    .lapp-container {
+        display: flex;
+        flex-direction: row; 
+        justify-content: center;
+        gap: 1.5rem;
+        width: 100%;
+        margin-top: 0;
+    }
+    .sido-footer {
+        margin-top: 2.5rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+}
