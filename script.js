@@ -6,7 +6,7 @@ const öppnaKnappar = document.querySelectorAll('[data-target]');
     const dialogLapp = document.getElementById(targetId);
     
     if (dialogLapp) {
-      // ÄNDRAT: Använd .show() istället för .showModal()
+    
       dialogLapp.show(); 
     }
   });

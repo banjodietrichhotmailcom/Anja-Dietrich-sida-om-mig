@@ -28,7 +28,7 @@ body {
     width: 100%;
     height: 4rem;
     object-fit: cover;
-    object-position: center 55%;  
+    object-position: 60%;  
     border-radius: 1rem;
 }  
 
@@ -183,9 +183,11 @@ dialog.postit-dialog {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);     
     margin: 0 auto; 
     transition: box-shadow 0.2s ease;
+    overflow-y: auto;
+    max-height: 18rem;
 }
 
-dialog.postit-dialog[open] {
+dialog.postit-dialog[open] { 
     display: block; 
     position: relative;         
     margin: 0 auto; 
@@ -193,6 +195,15 @@ dialog.postit-dialog[open] {
     width: 90%;           
     max-width: 18rem;    
     aspect-ratio: 1/1;  
+    button:focus-visible, 
+a:focus-visible, 
+dialog:focus-visible {
+    outline: 3px solid rgb(10, 112, 218); 
+    outline-offset: 4px;
+    button:focus, a:focus, dialog:focus {
+    outline: none;
+}
+}
 }
 
 dialog.postit-dialog:not([open]) {
@@ -204,12 +215,12 @@ dialog.postit-dialog a {
     text-decoration: underline wavy rgba(55, 55, 55, 0.4); 
 }
 
-/* Bakgrunder för lapparna */
+
 #ruta-om-mig { background: linear-gradient(to bottom, #cce6ff 3rem, #e6f2ff 3rem); }
 #ruta-kontakt { background: linear-gradient(to bottom, #f2e89d 3rem, #fffbc7 3rem); }
 #ruta-projekt { background: linear-gradient(to bottom, #f7d2db 3rem, #fbebee 3rem); }
 
-/* Nålen (Stängknappen) */
+
 .pin-btn {
     background: none;
     border: none;
@@ -300,6 +311,7 @@ dialog.postit-dialog a {
         align-items: center;    
         text-align: center;
         width: 100%;
+        position: relative; 
     }
     
     .min-bild {
