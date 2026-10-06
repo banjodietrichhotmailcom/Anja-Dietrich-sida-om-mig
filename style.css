@@ -1,10 +1,11 @@
+/* ==========================================================================
+   1. GLOBALA STILAR & BAS
+   ========================================================================== */
 body {
     max-width: 50rem;
     width: 100%;
     margin: 0 auto;
-    padding: 1.25rem; 
-    font-family: Poppins, sans-serif;
-    line-height: 1.2;
+    padding: 1.25rem 1.25rem 2rem 1.25rem; 
     background-color: rgba(194, 65, 95, 0.55); 
     color: #2A2A2A;
     box-sizing: border-box; 
@@ -17,12 +18,18 @@ body {
 /* ==========================================================================
    2. HEADER & FOOTER
    ========================================================================== */
+.site-header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 .header-img {
     width: 100%;
-    height: 3.5rem;
+    height: 4rem;
     object-fit: cover;
-    object-position: left center;
-    border-radius: 3rem;
+    object-position: center 55%;  
+    border-radius: 1rem;
 }  
 
 .sido-footer {
@@ -33,6 +40,7 @@ body {
     border-top: 1px solid rgba(0, 0, 0, 0.1); 
     font-family: Poppins, sans-serif;
     color: #2A2A2A;
+    width: 100%;
 }
 
 .sido-footer p {
@@ -61,11 +69,12 @@ body {
    ========================================================================== */
 .bollcontainer {
     display: flex;
-    justify-content: space-around; 
-    gap: 2rem;   
+    justify-content: center; 
+    gap: 1.5rem;   
     margin-top: 1.5rem;            
     margin-bottom: 0.5rem; 
     flex-wrap: wrap;     
+    width: 100%;
 }
 
 .boll {
@@ -97,6 +106,7 @@ body {
     flex-direction: column;
     align-items: center;    
     text-align: center;  
+    width: 100%;
 }   
 
 .min-bild {
@@ -110,9 +120,9 @@ body {
 
 .namn-text {
     color: rgb(10, 112, 218);
-    font-style: poppins, cursive; 
+    font-family: Poppins, sans-serif; 
     text-shadow: 0.25rem 0.25rem 0.375rem rgb(194, 65, 95);  
-    margin-top: 0px;       
+    margin-top: 0.5rem;       
     margin-bottom: 0px;     
     font-size: 2.5rem;
 }
@@ -121,7 +131,7 @@ body {
     font-size: 1rem;
     font-family: Cambria, Georgia, serif;     
     color: rgb(10,112,218);
-    margin-top: 0;
+    margin-top: 0.25rem;
     font-weight: bold;
 }
 
@@ -147,28 +157,46 @@ body {
 }
 
 /* ==========================================================================
-   5. POST-IT LAPPAR (DIALOG)
+   5. POST-IT LAPPAR (DIALOG) & CONTAINER
    ========================================================================== */
+.lapp-container {
+    display: flex;
+    flex-direction: row;       
+    flex-wrap: wrap;           
+    justify-content: center;   
+    gap: 2rem;                 
+    width: 100%;
+    margin-top: 3rem;          
+}
+
 dialog.postit-dialog {
-    font-family: "Chalkboard SE", "Bradley Hand", "Noteworthy", cursive; 
+    font-family: Poppins, sans-serif; 
     font-size: 1.2rem;
     color: rgba(45, 45, 45, 0.85);  
     text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.15);
     border: none;              
-    
-    /* FÖRENKLAT: Helt jämna, snygga hörn istället för uppvik */
     border-radius: 8px;
-    
     padding: 4.5rem 1.8rem 1.8rem 1.8rem;   
     width: 90%;           
     max-width: 18rem;    
     aspect-ratio: 1/1;  
-    
-    /* FÖRENKLAT: En ren, mjuk och modern skugga */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-        
-    margin: 0; 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);     
+    margin: 0 auto; 
     transition: box-shadow 0.2s ease;
+}
+
+dialog.postit-dialog[open] {
+    display: block; 
+    position: relative;         
+    margin: 0 auto; 
+    border: none;
+    width: 90%;           
+    max-width: 18rem;    
+    aspect-ratio: 1/1;  
+}
+
+dialog.postit-dialog:not([open]) {
+    display: none;
 }
 
 dialog.postit-dialog a { 
@@ -176,18 +204,10 @@ dialog.postit-dialog a {
     text-decoration: underline wavy rgba(55, 55, 55, 0.4); 
 }
 
-/* Unika bakgrunder för lapparna */
-#ruta-om-mig {
-    background: linear-gradient(to bottom, #cce6ff 3rem, #e6f2ff 3rem);
-}
-
-#ruta-kontakt {
-    background: linear-gradient(to bottom, #f2e89d 3rem, #fffbc7 3rem);
-}
-
-#ruta-projekt { 
-    background: linear-gradient(to bottom, #f7d2db 3rem, #fbebee 3rem);
-}
+/* Bakgrunder för lapparna */
+#ruta-om-mig { background: linear-gradient(to bottom, #cce6ff 3rem, #e6f2ff 3rem); }
+#ruta-kontakt { background: linear-gradient(to bottom, #f2e89d 3rem, #fffbc7 3rem); }
+#ruta-projekt { background: linear-gradient(to bottom, #f7d2db 3rem, #fbebee 3rem); }
 
 /* Nålen (Stängknappen) */
 .pin-btn {
@@ -217,84 +237,25 @@ dialog.postit-dialog a {
     transform: translateX(-50%) rotate(10deg) scale(1.1);
 }
 
-/* Övriga dolda dialog-rutor (om du har några) */
-dialog:not(.postit-dialog) {
-    background-color: rgba(194, 65, 95, 0.90); 
-    color: #faf6ee;         
-    border: none;              
-    border-radius: 1rem;       
-    padding: 1.8rem;   
-    width: 90%;           
-    max-width: 25rem;          
-    box-shadow: 0 0.6rem 2.5rem rgba(0, 0, 0, 0.15); 
-    margin-top: 35vh; 
+/* ==========================================================================
+   6. RESPONSIVITET (MEDIA QUERIES)
+   ========================================================================== */
 
-}
-.lapp-container {
-    display: flex;
-    flex-direction: row;       /* Sida vid sida på dator */
-    flex-wrap: wrap;           
-    justify-content: center;   
-    gap: 2rem;                 
-    width: 100%;
-    margin-top: 3rem;          
-}
 
-/* FIXEN: Vi stylar dialogen specifikt när den har attributet [open] */
-dialog.postit-dialog[open] {
-    /* VÄNDER ALLT RÄTT: Ändrar webbläsarens inbyggda flex-layout till en vanlig stabil box */
-    display: block; 
-    
-    /* FIXEN FÖR PINSEN: Gör att nålarna stannar inuti lappen istället för att flyga ut */
-    position: relative;        
-    
-    /* Nollställer webbläsarens dolda marginaler och ramar */
-    margin: 0;                 
-    border: none;
-    
-    /* Din fina design för post-it-lapparna */
-    font-family: "Chalkboard SE", "Bradley Hand", "Noteworthy", cursive; 
-    font-size: 1.2rem;
-    color: rgba(45, 45, 45, 0.85);  
-    text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.15);
-    border-radius: 8px;
-    padding: 4.5rem 1.8rem 1.8rem 1.8rem;   
-    width: 100%;           
-    max-width: 18rem;    
-    aspect-ratio: 1/1;  
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-
-/* Gömmer lappen helt när den är stängd så den inte tar upp plats */
-dialog.postit-dialog:not([open]) {
-    display: none;
-}
-.pin-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    position: absolute; /* Ligger kvar som absolute */
-    top: 0; 
-    left: 50%;
-    transform: translateX(-50%);
-    width: 3rem;
-    height: 3rem;
-    z-index: 9999;
-}
-
-/* MOBIL- & SURFPLATTEMODE (Gäller för skärmar UPP TILL 48rem/768px) */
-@media (max-width: 48rem) {
+@media (max-width: 64rem) {
     .bollcontainer {
         flex-direction: row; 
         flex-wrap: wrap; 
         align-items: center;    
         justify-content: center; 
+        gap: 1rem;
     }
 
     .lapp-container {
-        flex-direction: column; /* Staplar dina post-it lappar vertikalt på mobilen */
+        flex-direction: column; 
         align-items: center;
         gap: 1.5rem; 
+        width: 100%;
     }
 
     .projekt-boll {
@@ -308,11 +269,31 @@ dialog.postit-dialog:not([open]) {
         gap: 1rem;
         padding-bottom: 1rem;
         margin-bottom: 1.5rem; 
+        width: 100%;
+    }
+    
+    dialog.postit-dialog[open] {
+        width: 90%;
+        max-width: 18rem;
+        margin: 0 auto;
+    }
+
+    
+    .sido-footer {
+        margin-top: 1.5rem; 
+        padding-top: 1rem;
+        padding-bottom: 1rem;
     }
 }
 
-/* DATOR- & SKRIVBORDSMODE (Gäller för skärmar FRÅN 48rem/768px och uppåt) */
-@media (min-width: 48rem) { 
+/* DATOR- & SKRIVBORDSMODE (Skärmar FRÅN 64rem/1024px och uppåt) */
+@media (min-width: 64rem) { 
+    
+    .site-header {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
     .profil-sektion {
         display: flex;
         flex-direction: column; 
@@ -322,11 +303,11 @@ dialog.postit-dialog:not([open]) {
     }
     
     .min-bild {
-        margin-top: -7rem; 
+        margin-top: -1rem; 
     }
     
     .namn-text {
-        margin-top: -1rem;
+        margin-top: 1rem; 
         margin-bottom: 0.25rem;
     }
     
@@ -348,6 +329,7 @@ dialog.postit-dialog:not([open]) {
         width: 100%;
         margin-top: 0;
     }
+
     .sido-footer {
         margin-top: 2.5rem;
         padding-top: 1rem;
