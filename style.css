@@ -14,7 +14,11 @@ body {
 *, *::before, *::after {
     box-sizing: inherit;
 }
-
+    a:focus-visible, 
+    dialog:focus-visible {
+    outline: 3px solid rgb(10, 112, 218); 
+    outline-offset: 4px;  
+    }
 /* ==========================================================================
    2. HEADER & FOOTER
    ========================================================================== */
@@ -51,7 +55,7 @@ body {
 
 .linkedin-link {
     display: inline-block;
-    color: #2A2A2A;
+    color: rgb(10, 112, 218);
     font-size: 1rem;
     font-weight: 500;
     text-decoration: underline; 
@@ -107,6 +111,7 @@ body {
     align-items: center;    
     text-align: center;  
     width: 100%;
+    min-height: 32rem;
 }   
 
 .min-bild {
@@ -146,7 +151,7 @@ body {
     font-weight: bold;
     font-size: 1.1rem;
     cursor: pointer;
-    margin-top: 1.5rem;       
+    margin-top: 2rem;       
     box-shadow: 0 0.5rem 1rem 0.1rem rgba(40, 10, 20, 0.35);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -192,17 +197,13 @@ dialog.postit-dialog[open] {
     position: relative;         
     margin: 0 auto; 
     border: none;
-    width: 90%;           
-    max-width: 18rem;    
+    width: 90;           
+    max-width: 15rem;    
     aspect-ratio: 1/1;  
     button:focus-visible, 
-a:focus-visible, 
-dialog:focus-visible {
-    outline: 3px solid rgb(10, 112, 218); 
-    outline-offset: 4px;
+
     button:focus, a:focus, dialog:focus {
     outline: none;
-}
 }
 }
 
@@ -214,7 +215,6 @@ dialog.postit-dialog a {
     color: inherit;
     text-decoration: underline wavy rgba(55, 55, 55, 0.4); 
 }
-
 
 #ruta-om-mig { background: linear-gradient(to bottom, #cce6ff 3rem, #e6f2ff 3rem); }
 #ruta-kontakt { background: linear-gradient(to bottom, #f2e89d 3rem, #fffbc7 3rem); }
@@ -247,6 +247,25 @@ dialog.postit-dialog a {
 .pin-btn:hover {
     transform: translateX(-50%) rotate(10deg) scale(1.1);
 }
+.projekt-container {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem; 
+}
+.projekt-titel {
+    font-weight: bold;
+    font-size: 1.5rem
+}
+
+
+.projekt-container li {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
 
 /* ==========================================================================
    6. RESPONSIVITET (MEDIA QUERIES)
@@ -259,10 +278,15 @@ dialog.postit-dialog a {
         flex-wrap: wrap; 
         align-items: center;    
         justify-content: center; 
-        gap: 1rem;
+        gap: 2.5rem;
     }
+    .profil-sektion {
+    position: relative;
 
+}
     .lapp-container {
+        position: absolute;
+        top: 0; 
         flex-direction: column; 
         align-items: center;
         gap: 1.5rem; 
@@ -270,7 +294,7 @@ dialog.postit-dialog a {
     }
 
     .projekt-boll {
-        margin-top: 1.5rem;
+        margin-top: -0.6rem;
     }
 
     header, .site-header, .huvud-header {
@@ -279,27 +303,116 @@ dialog.postit-dialog a {
         align-items: center;
         gap: 1rem;
         padding-bottom: 1rem;
-        margin-bottom: 1.5rem; 
+        margin-bottom: -1rem; 
         width: 100%;
     }
     
-    dialog.postit-dialog[open] {
-        width: 90%;
-        max-width: 18rem;
-        margin: 0 auto;
+    dialog.postit-dialog[open],
+    .postit-dialog [data-visas="true"]{
+        position: absolute;
+        top: -2rem; 
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 15.5rem;
+        margin: 0;
     }
+    #ruta-om-mig[open],
+#ruta-om-mig[data-visas="true"] {
+    z-index: 10;
+    transform: translateX(-58%); 
+}
 
-    
-    .sido-footer {
-        margin-top: 1.5rem; 
+#ruta-projekt[open],
+#ruta-projekt[data-visas="true"] {
+    z-index: 11;
+    transform: translateX(-48%);  
+}
+
+#ruta-kontakt[open],
+#ruta-kontakt[data-visas="true"] {
+    z-index: 12;
+    transform: translateX(-54%); 
+}
+
+     .sido-footer {
+        margin-top: 2rem; 
         padding-top: 1rem;
         padding-bottom: 1rem;
     }
+    
+
 }
 
 /* DATOR- & SKRIVBORDSMODE (Skärmar FRÅN 64rem/1024px och uppåt) */
-@media (min-width: 64rem) { 
+@media (min-width: 64rem) {
+
+    .profil-sektion {
+        position: relative;
+        max-width: 25rem;
+        margin: 1rem auto; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     
+        .lapp-container {
+        display: grid;
+        grid-template-columns: 22rem 25rem 22rem; 
+        justify-content: center;
+        align-items: start;
+        gap: 1.5rem;
+        position: absolute;
+        top: -3.8rem;
+        left: 0;
+        width: 100%;
+        pointer-events: none;
+    }
+    
+
+    .postit-dialog[open] {
+        position: static;
+        pointer-events: auto;
+        margin: 0;
+        width: 100%;
+        max-width: 22rem;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.15);
+        transform: none; 
+    }
+
+    
+    #ruta-om-mig[open] {
+        grid-column: 1;
+        grid-row: 1;
+        margin-top: 0;
+        position: relative;
+        z-index: 15;
+        width: 20rem;
+        
+    }
+
+    
+    #ruta-kontakt[open] {
+        grid-column: 3;
+        grid-row: 1;
+        margin-top: 0;
+        position: relative;
+        z-index: 15;
+        width: 20rem; 
+    }
+
+    #ruta-projekt[open] {
+        grid-column: 2; 
+        grid-row: 1;    
+        
+        
+        width: 20rem; 
+        justify-self: center; 
+        
+        
+        position: relative;
+        z-index: 10;        
+        
+    }
+}   
     .site-header {
         max-width: 100%;
         margin: 0 auto;
@@ -313,6 +426,7 @@ dialog.postit-dialog a {
         width: 100%;
         position: relative; 
     }
+
     
     .min-bild {
         margin-top: -1rem; 
@@ -333,18 +447,12 @@ dialog.postit-dialog a {
         margin-bottom: 1rem; 
     }
 
-    .lapp-container {
-        display: flex;
-        flex-direction: row; 
-        justify-content: center;
-        gap: 1.5rem;
-        width: 100%;
-        margin-top: 0;
     }
 
     .sido-footer {
-        margin-top: 2.5rem;
+        margin-top: -2rem;
         padding-top: 1rem;
         padding-bottom: 1rem;
     }
+
 }
