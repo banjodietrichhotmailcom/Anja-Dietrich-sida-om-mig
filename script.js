@@ -1,4 +1,8 @@
 const öppnaKnappar = document.querySelectorAll('[data-target]');
+const lappContainer = document.querySelector('.lapp-container');
+
+// 1. 🚀 EN GLOBAL RÄKNARE (Lägg till denna längst upp i filen)
+let högstaZIndex = 20;
 
 öppnaKnappar.forEach(knapp => {
   knapp.addEventListener('click', () => {
@@ -6,8 +10,22 @@ const öppnaKnappar = document.querySelectorAll('[data-target]');
     const dialogLapp = document.getElementById(targetId);
     
     if (dialogLapp) {
-    
-      dialogLapp.show(); 
+      
+      if (dialogLapp.hasAttribute('open')) {
+        
+        dialogLapp.close();
+      } else {
+      
+        dialogLapp.show(); 
+        
+        
+        högstaZIndex++; 
+        dialogLapp.style.zIndex = högstaZIndex; 
+        
+        if (lappContainer) {
+          lappContainer.appendChild(dialogLapp);
+        }
+      }
     }
   });
 });

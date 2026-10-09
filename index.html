@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anja Dietrich - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script> 
+    <link href="https://googleapis.com" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <img src="post-it.jpg" alt="Oskrivna post-it-lappar" class="header-img">
+        </header>
+
+
+<nav class="bollcontainer">
+
+    <button class="boll" data-target="ruta-om-mig">Om mig</button>
+    
+    
+    <button class="boll" data-target="ruta-kontakt">Kontakt</button>
+    
+</nav>
+
+<main class="profil-sektion">
+    <figure class="bild-wrapper">
+        <img src="Profilbild.1.jpg" alt="Profilbild på Anja Dietrich, framför ett flipperspel med filter kaninöron" class="min-bild">
+    </figure>
+    
+    <h1 class="namn-text">Anja Dietrich</h1>
+    <p class="tagline">UXE-student | Kreativ, logisk & lyhörd</p>
+    <button class="projekt-boll" data-target="ruta-projekt">Projekt</button>
+    
+    
+   
+    
+    <dialog id="ruta-kontakt" class="postit-dialog">
+        <h2>Kontakt</h2>
+        <p>Vad kul att du vill ta kontakt med mig!</p>
+        <p>Mejla eller ring! <a href="mailto:banjodietrich@hotmail.com" class="post-it-link">banjodietrich@hotmail.com</a></p>
+        <p>Mobil: <a href="tel:+46737591769" class="post-it-link">073-7591769</a></p>
+        <button class="pin-btn stang-lapp" aria-label="Stäng">📌</button>
+        
+    </dialog>
+    
+    
+    <dialog id="ruta-om-mig" class="postit-dialog">
+        <h2>Om mig</h2>
+        <p>Hej!</p>
+        <p>Vad kul att du vill veta mer om mig! Jag studerar till UX-Engineer på Chasacademy i Globen och blir klar i maj 2028. Jag är utbildad socialpedagog och har de senaste tio åren arbetat inom skola. Dessförinnan har jag jobbat inom psykatrin och LSS. Min långa erfarenhet inom socialt arbete har gjort mig till en god människokännare och jag kan lätt sätta mig in i och förstå andras perspektiv. Jag har i unga år gått konstskola, fotoskola samt skrivarkurser och älskar när jag får använda min kreativa och estetiska sida. Jag är analytiskt lagd och tycker om problemlösning och att få djupdyka in i projekt. Jag bor med min sambo och våra två barn i Årsta, Stockholm. </p>
+       <button class="pin-btn stang-lapp" aria-label="Stäng">📌</button>
+    </dialog>
+    
+
+    <dialog id="ruta-projekt" class="postit-dialog">
+        
+        <h2>Mina projekt</h2>
+        <p>Här listar jag löpande mina projekt och inom kort kommer mer inom UX.</p>
+        <ul class="projekt-container">
+            <li>
+                <li>
+        <span class="projekt-titel">🎭 Storytelling 📝</span>
+        <h4 class="projekt-underrubrik">Julklappen</h4>
+        <p class="projekt-beskrivning">
+            Jag har jobbat en del med stop-motion och gått kurser i skrivande och manusförfattande. Jag tycker mycket om att hitta på historier, gärna med en komisk touch. Den här berättelsen handlar om inköp av en julklapp till en lärare och dilemmat som uppstår när alla inblandade har individuella preferenser. 
+        </p>
+        <video controls class="portfolio-video" aria-label="Videoprojekt Julklappen">
+            <source src="Julklappen.mp4" type="video/mp4">
+            Din webbläsare stödjer inte videotaggen.
+        </video>
+        
+    </li>
+            <li>
+                <span class="projekt-titel">🎨 Eget skapande</span>
+                <h4 class="projekt-underrubrik">Pingviner</h4>
+                <p class="projekt-beskrivning">
+            Jag har i mitt arbete på skola och fritids gjort mycket pyssel med barnen och på egen hand experimenterat fram olika idéer. Här har jag gjort pingviner av piprensare och byggt en skridskobana av sockerbitar. Stop-motion teknik ger liv åt dem.  
+        </p>
+                <video controls class="portfolio-video" aria-label="Videoprojekt Pingviner">
+            <source src="Pingviner.mp4" type="video/mp4">
+            Din webbläsare stödjer inte videotaggen.
+        </video>
+          </li>
+        </ul>
+        <button class="pin-btn stang-lapp" aria-label="Stäng" autofocus>📌</button>
+    </dialog>
+    <section class="lapp-container"></section>
+</main>
+
+ 
+<footer class="sido-footer">
+  <a href="https://linkedin.com/in/anja-dietrich-a923a518a" target="_blank" class="linkedin-link">
+    Följ mig på LinkedIn
+  </a>
+  <p>© 2026 – Skapad av [Anja Dietrich]</p>
+</footer>    
+
+</body>
+</html>
